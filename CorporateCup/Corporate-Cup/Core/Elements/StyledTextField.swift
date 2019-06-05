@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum TournamentAction {
+    case Join, Leave
+}
+
 class StyledTextField: UITextField {
     // Properties
     let borderLine = CALayer()

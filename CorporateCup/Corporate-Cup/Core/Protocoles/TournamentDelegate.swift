@@ -1,13 +1,12 @@
 //
-//  MatchStartModalDelegate.swift
+//  TournamentDelegate.swift
 //  Corporate-Cup
 //
 //  Created by wesley on 05/06/2019.
 //  Copyright © 2019 corporate-cup. All rights reserved.
 //
+import UIKit
 
-import Foundation
-
-protocol MatchStartModalDelegate {
-    func provideRules(match: Match)
+protocol TournamentDelegate {
+    func tournamentAction(action: TournamentAction)
 }

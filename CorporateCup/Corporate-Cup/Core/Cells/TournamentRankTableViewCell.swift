@@ -9,13 +9,15 @@
 import UIKit
 
 class TournamentRankTableViewCell: UITableViewCell {
+    // Properties
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var playerName: UILabel!
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var border: UIView!
     
     let user:User = UserDefaults.getTheUserStored() ?? User()
-    
+   
+    // Initialize
     func initializeRow(player: Player, leader: Bool) {
         self.avatar = player.avatar
         self.playerName.text = player.name

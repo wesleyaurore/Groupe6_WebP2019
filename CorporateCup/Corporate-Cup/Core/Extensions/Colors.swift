@@ -27,5 +27,6 @@ extension UIColor {
         static let darkBlueTransparent = UIColor(red:0.04, green:0.16, blue:0.39, alpha:0.57)
         
         static let sunflower = UIColor(red:0.98, green:0.76, blue:0.00, alpha:1.0)
+        static let orangePeel = UIColor(red:0.97, green:0.60, blue:0.00, alpha:1.0)
     }
 }

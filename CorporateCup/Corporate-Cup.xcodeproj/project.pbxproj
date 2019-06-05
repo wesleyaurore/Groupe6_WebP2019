@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B05EAC12288E43B00A1050F /* GeneralRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B05EAC02288E43B00A1050F /* GeneralRankingViewController.swift */; };
-		2B05EAC42288FA6C00A1050F /* GeneralRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B05EAC32288FA6C00A1050F /* GeneralRankingTableViewCell.swift */; };
-		2B05EAC9228A292700A1050F /* MatchCardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B05EAC8228A292700A1050F /* MatchCardViewDelegate.swift */; };
+		2B05EAC42288FA6C00A1050F /* PalmaresRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B05EAC32288FA6C00A1050F /* PalmaresRankTableViewCell.swift */; };
 		2B19D5022271D9FE00664593 /* JumpinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B19D5012271D9FE00664593 /* JumpinViewController.swift */; };
 		2B22BE7B229B0276007CD052 /* LoginPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BE7A229B0276007CD052 /* LoginPasswordViewController.swift */; };
 		2B22BE7D229C59FB007CD052 /* RolesModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BE7C229C59FB007CD052 /* RolesModalViewController.swift */; };
@@ -23,25 +21,25 @@
 		2B22BE9422A1F72D007CD052 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BE9322A1F72D007CD052 /* Player.swift */; };
 		2B22BE9622A206CB007CD052 /* MatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BE9522A206CB007CD052 /* MatchList.swift */; };
 		2B22BE9822A20E7E007CD052 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BE9722A20E7E007CD052 /* Group.swift */; };
-		2B22BE9A22A2119A007CD052 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BE9922A2119A007CD052 /* Array.swift */; };
 		2B22BE9C22A4C226007CD052 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BE9B22A4C226007CD052 /* Badge.swift */; };
 		2B22BE9E22A511CA007CD052 /* UpdatedStatusModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BE9D22A511CA007CD052 /* UpdatedStatusModalViewController.swift */; };
 		2B22BEA222A69520007CD052 /* TournamentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BEA122A69520007CD052 /* TournamentService.swift */; };
 		2B22BEA422A6A8CE007CD052 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BEA322A6A8CE007CD052 /* MainNavigationController.swift */; };
 		2B22BEA722A6C047007CD052 /* TournamentRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BEA622A6C047007CD052 /* TournamentRankTableViewCell.swift */; };
+		2B22BEAC22A7189D007CD052 /* TournamentActionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BEAB22A7189D007CD052 /* TournamentActionModalViewController.swift */; };
+		2B22BEAE22A74AAB007CD052 /* TournamentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BEAD22A74AAB007CD052 /* TournamentDelegate.swift */; };
+		2B22BEB022A761F8007CD052 /* PalmaresService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BEAF22A761F8007CD052 /* PalmaresService.swift */; };
+		2B22BEB222A78EDC007CD052 /* MatchCardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BEB122A78EDC007CD052 /* MatchCardDelegate.swift */; };
+		2B22BEB422A7938B007CD052 /* MatchStartModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B22BEB322A7938B007CD052 /* MatchStartModalDelegate.swift */; };
 		2B2CFC6622822F13004C6ECA /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC6522822F13004C6ECA /* MatchCard.swift */; };
 		2B2CFC6922823914004C6ECA /* MatchListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC6822823914004C6ECA /* MatchListDelegate.swift */; };
 		2B2CFC6D22823F2F004C6ECA /* MatchCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC6C22823F2F004C6ECA /* MatchCardTableViewCell.swift */; };
-		2B2CFC7122824697004C6ECA /* MatchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC7022824697004C6ECA /* MatchCardView.swift */; };
-		2B2CFC73228265E2004C6ECA /* MatchCardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC72228265E2004C6ECA /* MatchCardDelegate.swift */; };
 		2B2CFC7722827CA6004C6ECA /* MatchResultModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC7622827CA6004C6ECA /* MatchResultModalViewController.swift */; };
 		2B2CFC7A2283218F004C6ECA /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC792283218F004C6ECA /* Label.swift */; };
 		2B2CFC7C22832E54004C6ECA /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC7B22832E54004C6ECA /* View.swift */; };
-		2B2CFC7F2283442D004C6ECA /* MatchCardModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC7E2283442D004C6ECA /* MatchCardModalDelegate.swift */; };
 		2B2CFC82228360F1004C6ECA /* CongratModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC81228360F1004C6ECA /* CongratModalViewController.swift */; };
 		2B2CFC8522838D8B004C6ECA /* MatchStartModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC8422838D8B004C6ECA /* MatchStartModalViewController.swift */; };
 		2B2CFC892283A3C4004C6ECA /* ViewController.ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC882283A3C4004C6ECA /* ViewController.ext.swift */; };
-		2B2CFC8C2283ACC5004C6ECA /* MatchStartModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC8B2283ACC5004C6ECA /* MatchStartModalDelegate.swift */; };
 		2B2CFC8E228498C8004C6ECA /* IssuesModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CFC8D228498C8004C6ECA /* IssuesModalViewController.swift */; };
 		2B49A874228EEFAC000EE9D1 /* UrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B49A873228EEFAC000EE9D1 /* UrlBuilder.swift */; };
 		2B49A876228EF66F000EE9D1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B49A875228EF66F000EE9D1 /* AuthService.swift */; };
@@ -83,9 +81,7 @@
 
 /* Begin PBXFileReference section */
 		1DC5E13A9BF5DFF969186D50 /* Pods_Corporate_Cup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Corporate_Cup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B05EAC02288E43B00A1050F /* GeneralRankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRankingViewController.swift; sourceTree = "<group>"; };
-		2B05EAC32288FA6C00A1050F /* GeneralRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRankingTableViewCell.swift; sourceTree = "<group>"; };
-		2B05EAC8228A292700A1050F /* MatchCardViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardViewDelegate.swift; sourceTree = "<group>"; };
+		2B05EAC32288FA6C00A1050F /* PalmaresRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmaresRankTableViewCell.swift; sourceTree = "<group>"; };
 		2B19D5012271D9FE00664593 /* JumpinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpinViewController.swift; sourceTree = "<group>"; };
 		2B22BE7A229B0276007CD052 /* LoginPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordViewController.swift; sourceTree = "<group>"; };
 		2B22BE7C229C59FB007CD052 /* RolesModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolesModalViewController.swift; sourceTree = "<group>"; };
@@ -99,25 +95,25 @@
 		2B22BE9322A1F72D007CD052 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		2B22BE9522A206CB007CD052 /* MatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchList.swift; sourceTree = "<group>"; };
 		2B22BE9722A20E7E007CD052 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		2B22BE9922A2119A007CD052 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		2B22BE9B22A4C226007CD052 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		2B22BE9D22A511CA007CD052 /* UpdatedStatusModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedStatusModalViewController.swift; sourceTree = "<group>"; };
 		2B22BEA122A69520007CD052 /* TournamentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentService.swift; sourceTree = "<group>"; };
 		2B22BEA322A6A8CE007CD052 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		2B22BEA622A6C047007CD052 /* TournamentRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentRankTableViewCell.swift; sourceTree = "<group>"; };
+		2B22BEAB22A7189D007CD052 /* TournamentActionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentActionModalViewController.swift; sourceTree = "<group>"; };
+		2B22BEAD22A74AAB007CD052 /* TournamentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDelegate.swift; sourceTree = "<group>"; };
+		2B22BEAF22A761F8007CD052 /* PalmaresService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmaresService.swift; sourceTree = "<group>"; };
+		2B22BEB122A78EDC007CD052 /* MatchCardDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardDelegate.swift; sourceTree = "<group>"; };
+		2B22BEB322A7938B007CD052 /* MatchStartModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStartModalDelegate.swift; sourceTree = "<group>"; };
 		2B2CFC6522822F13004C6ECA /* MatchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCard.swift; sourceTree = "<group>"; };
 		2B2CFC6822823914004C6ECA /* MatchListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListDelegate.swift; sourceTree = "<group>"; };
 		2B2CFC6C22823F2F004C6ECA /* MatchCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardTableViewCell.swift; sourceTree = "<group>"; };
-		2B2CFC7022824697004C6ECA /* MatchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardView.swift; sourceTree = "<group>"; };
-		2B2CFC72228265E2004C6ECA /* MatchCardDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardDelegate.swift; sourceTree = "<group>"; };
 		2B2CFC7622827CA6004C6ECA /* MatchResultModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResultModalViewController.swift; sourceTree = "<group>"; };
 		2B2CFC792283218F004C6ECA /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		2B2CFC7B22832E54004C6ECA /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		2B2CFC7E2283442D004C6ECA /* MatchCardModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardModalDelegate.swift; sourceTree = "<group>"; };
 		2B2CFC81228360F1004C6ECA /* CongratModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratModalViewController.swift; sourceTree = "<group>"; };
 		2B2CFC8422838D8B004C6ECA /* MatchStartModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStartModalViewController.swift; sourceTree = "<group>"; };
 		2B2CFC882283A3C4004C6ECA /* ViewController.ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.ext.swift; sourceTree = "<group>"; };
-		2B2CFC8B2283ACC5004C6ECA /* MatchStartModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStartModalDelegate.swift; sourceTree = "<group>"; };
 		2B2CFC8D228498C8004C6ECA /* IssuesModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesModalViewController.swift; sourceTree = "<group>"; };
 		2B49A873228EEFAC000EE9D1 /* UrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilder.swift; sourceTree = "<group>"; };
 		2B49A875228EF66F000EE9D1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -171,14 +167,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B05EABF2288E3AB00A1050F /* GeneralRanking */ = {
-			isa = PBXGroup;
-			children = (
-				2B05EAC02288E43B00A1050F /* GeneralRankingViewController.swift */,
-			);
-			path = GeneralRanking;
-			sourceTree = "<group>";
-		};
 		2B19D5002271D9C900664593 /* Jumpin */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,31 +175,18 @@
 			path = Jumpin;
 			sourceTree = "<group>";
 		};
-		2B22BE8622A078DF007CD052 /* Tournament */ = {
-			isa = PBXGroup;
-			children = (
-				2B22BE8722A0790B007CD052 /* TournamentViewController.swift */,
-			);
-			path = Tournament;
-			sourceTree = "<group>";
-		};
-		2B22BE8922A07D4C007CD052 /* Palmares */ = {
-			isa = PBXGroup;
-			children = (
-				2B22BE8A22A07D69007CD052 /* PalmaresViewController.swift */,
-			);
-			path = Palmares;
-			sourceTree = "<group>";
-		};
-		2B22BEA522A6A8DE007CD052 /* NavigationViewController */ = {
+		2B22BEAA22A6FF05007CD052 /* MainPages */ = {
 			isa = PBXGroup;
 			children = (
 				2B22BEA322A6A8CE007CD052 /* MainNavigationController.swift */,
+				2B22BE8722A0790B007CD052 /* TournamentViewController.swift */,
+				2BE090B9227363860097011F /* MatchListViewController.swift */,
+				2B22BE8A22A07D69007CD052 /* PalmaresViewController.swift */,
 			);
-			path = NavigationViewController;
+			path = MainPages;
 			sourceTree = "<group>";
 		};
-		2B2CFC6222820189004C6ECA /* Models */ = {
+		2B2CFC6222820189004C6ECA /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				2B2CFC6522822F13004C6ECA /* MatchCard.swift */,
@@ -224,7 +199,7 @@
 				2B22BE9722A20E7E007CD052 /* Group.swift */,
 				2B22BE9B22A4C226007CD052 /* Badge.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2B2CFC63228201C6004C6ECA /* Core */ = {
@@ -233,7 +208,7 @@
 				2B49A8772290C666000EE9D1 /* Elements */,
 				2B49A872228EEF5A000EE9D1 /* Network */,
 				2B2CFC67228238CB004C6ECA /* Protocoles */,
-				2B2CFC6222820189004C6ECA /* Models */,
+				2B2CFC6222820189004C6ECA /* Model */,
 				2BAFDE36227159D9002A55AE /* Views */,
 				2B2CFC6B22823F07004C6ECA /* Cells */,
 				2BC1E5ED22319709002DEA06 /* ViewControllers */,
@@ -245,11 +220,10 @@
 		2B2CFC67228238CB004C6ECA /* Protocoles */ = {
 			isa = PBXGroup;
 			children = (
-				2B05EAC8228A292700A1050F /* MatchCardViewDelegate.swift */,
-				2B2CFC8B2283ACC5004C6ECA /* MatchStartModalDelegate.swift */,
-				2B2CFC7E2283442D004C6ECA /* MatchCardModalDelegate.swift */,
-				2B2CFC72228265E2004C6ECA /* MatchCardDelegate.swift */,
 				2B2CFC6822823914004C6ECA /* MatchListDelegate.swift */,
+				2B22BEAD22A74AAB007CD052 /* TournamentDelegate.swift */,
+				2B22BEB122A78EDC007CD052 /* MatchCardDelegate.swift */,
+				2B22BEB322A7938B007CD052 /* MatchStartModalDelegate.swift */,
 			);
 			path = Protocoles;
 			sourceTree = "<group>";
@@ -258,18 +232,10 @@
 			isa = PBXGroup;
 			children = (
 				2B2CFC6C22823F2F004C6ECA /* MatchCardTableViewCell.swift */,
-				2B05EAC32288FA6C00A1050F /* GeneralRankingTableViewCell.swift */,
+				2B05EAC32288FA6C00A1050F /* PalmaresRankTableViewCell.swift */,
 				2B22BEA622A6C047007CD052 /* TournamentRankTableViewCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		2B2CFC6F2282466F004C6ECA /* MatchCard */ = {
-			isa = PBXGroup;
-			children = (
-				2B2CFC7022824697004C6ECA /* MatchCardView.swift */,
-			);
-			path = MatchCard;
 			sourceTree = "<group>";
 		};
 		2B2CFC7522827C85004C6ECA /* Modals */ = {
@@ -281,6 +247,7 @@
 				2B2CFC81228360F1004C6ECA /* CongratModalViewController.swift */,
 				2B22BE7C229C59FB007CD052 /* RolesModalViewController.swift */,
 				2B22BE9D22A511CA007CD052 /* UpdatedStatusModalViewController.swift */,
+				2B22BEAB22A7189D007CD052 /* TournamentActionModalViewController.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -299,6 +266,7 @@
 				2B49A875228EF66F000EE9D1 /* AuthService.swift */,
 				2B22BE80229D7D3B007CD052 /* MatchService.swift */,
 				2B22BEA122A69520007CD052 /* TournamentService.swift */,
+				2B22BEAF22A761F8007CD052 /* PalmaresService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -336,7 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				2B2CFC8322837802004C6ECA /* PinScrollView */,
-				2B2CFC6F2282466F004C6ECA /* MatchCard */,
 				2BAFDE31227144B7002A55AE /* TutorialSlide */,
 			);
 			path = Views;
@@ -364,7 +331,6 @@
 				2BAD5E6A2271716600C8F518 /* TextField.swift */,
 				2B49A87C2290EA22000EE9D1 /* UserDefault.swift */,
 				2B22BE7E229C8AC8007CD052 /* ImageView.ext.swift */,
-				2B22BE9922A2119A007CD052 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -372,15 +338,11 @@
 		2BC1E5ED22319709002DEA06 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2B22BE8922A07D4C007CD052 /* Palmares */,
-				2B22BE8622A078DF007CD052 /* Tournament */,
-				2B05EABF2288E3AB00A1050F /* GeneralRanking */,
-				2BE090B8227363370097011F /* MatchList */,
+				2B22BEAA22A6FF05007CD052 /* MainPages */,
 				2B2CFC7522827C85004C6ECA /* Modals */,
 				2B19D5002271D9C900664593 /* Jumpin */,
 				2BAD5E71227180E300C8F518 /* Login */,
 				2BAFDE37227159F2002A55AE /* Tutorial */,
-				2B22BEA522A6A8DE007CD052 /* NavigationViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -426,14 +388,6 @@
 				2BC53DFF222882E800A5ABF7 /* Info.plist */,
 			);
 			path = "Corporate-CupTests";
-			sourceTree = "<group>";
-		};
-		2BE090B8227363370097011F /* MatchList */ = {
-			isa = PBXGroup;
-			children = (
-				2BE090B9227363860097011F /* MatchListViewController.swift */,
-			);
-			path = MatchList;
 			sourceTree = "<group>";
 		};
 		AA76C930758CB98508CC21BC /* Pods */ = {
@@ -609,7 +563,6 @@
 				2BC53DEB222882E600A5ABF7 /* ViewController.swift in Sources */,
 				2B22BE7D229C59FB007CD052 /* RolesModalViewController.swift in Sources */,
 				2BAD5E6B2271716600C8F518 /* TextField.swift in Sources */,
-				2B22BE9A22A2119A007CD052 /* Array.swift in Sources */,
 				2B22BE9822A20E7E007CD052 /* Group.swift in Sources */,
 				2B22BE9622A206CB007CD052 /* MatchList.swift in Sources */,
 				2B22BEA222A69520007CD052 /* TournamentService.swift in Sources */,
@@ -621,20 +574,20 @@
 				2B22BE9022A1E143007CD052 /* Match.swift in Sources */,
 				2B2CFC82228360F1004C6ECA /* CongratModalViewController.swift in Sources */,
 				2B22BE9222A1F082007CD052 /* Activity.swift in Sources */,
-				2B05EAC12288E43B00A1050F /* GeneralRankingViewController.swift in Sources */,
 				2BAD5E6D227172EC00C8F518 /* LoginEmailViewController.swift in Sources */,
 				2BC53DE9222882E600A5ABF7 /* AppDelegate.swift in Sources */,
 				2BAFDE3522714836002A55AE /* TutorialSlideView.swift in Sources */,
+				2B22BEB422A7938B007CD052 /* MatchStartModalDelegate.swift in Sources */,
+				2B22BEAC22A7189D007CD052 /* TournamentActionModalViewController.swift in Sources */,
 				2BAD5E772271BBA600C8F518 /* RegisterConfirmationViewController.swift in Sources */,
-				2B2CFC7122824697004C6ECA /* MatchCardView.swift in Sources */,
+				2B22BEB222A78EDC007CD052 /* MatchCardDelegate.swift in Sources */,
 				2B19D5022271D9FE00664593 /* JumpinViewController.swift in Sources */,
 				2B22BE8B22A07D69007CD052 /* PalmaresViewController.swift in Sources */,
 				2BAD5E7022717E3900C8F518 /* LoginCreatePasswordViewController.swift in Sources */,
-				2B05EAC9228A292700A1050F /* MatchCardViewDelegate.swift in Sources */,
 				2BAFDE3922715A49002A55AE /* TutorialViewController.swift in Sources */,
 				2B49A874228EEFAC000EE9D1 /* UrlBuilder.swift in Sources */,
 				2B22BE7F229C8AC8007CD052 /* ImageView.ext.swift in Sources */,
-				2B2CFC7F2283442D004C6ECA /* MatchCardModalDelegate.swift in Sources */,
+				2B22BEAE22A74AAB007CD052 /* TournamentDelegate.swift in Sources */,
 				2B49A87B2290E68F000EE9D1 /* User.swift in Sources */,
 				2B22BEA422A6A8CE007CD052 /* MainNavigationController.swift in Sources */,
 				2BD813C92254F4A70047ADCC /* ContextualButtonView.swift in Sources */,
@@ -643,12 +596,11 @@
 				2B2CFC892283A3C4004C6ECA /* ViewController.ext.swift in Sources */,
 				2B49A8792290CD9B000EE9D1 /* StyledTextField.swift in Sources */,
 				2BD813C72254BEDB0047ADCC /* Colors.swift in Sources */,
-				2B05EAC42288FA6C00A1050F /* GeneralRankingTableViewCell.swift in Sources */,
+				2B05EAC42288FA6C00A1050F /* PalmaresRankTableViewCell.swift in Sources */,
 				2B22BE8822A0790B007CD052 /* TournamentViewController.swift in Sources */,
 				2B22BE9C22A4C226007CD052 /* Badge.swift in Sources */,
 				2B22BEA722A6C047007CD052 /* TournamentRankTableViewCell.swift in Sources */,
 				2BAD5E732271812900C8F518 /* LoginProfilViewController.swift in Sources */,
-				2B2CFC73228265E2004C6ECA /* MatchCardDelegate.swift in Sources */,
 				2B22BE7B229B0276007CD052 /* LoginPasswordViewController.swift in Sources */,
 				2B2CFC7722827CA6004C6ECA /* MatchResultModalViewController.swift in Sources */,
 				2B2CFC8E228498C8004C6ECA /* IssuesModalViewController.swift in Sources */,
@@ -657,7 +609,7 @@
 				2B2CFC7C22832E54004C6ECA /* View.swift in Sources */,
 				2B22BE8E22A09F2B007CD052 /* Tournament.swift in Sources */,
 				2BE090BA227363860097011F /* MatchListViewController.swift in Sources */,
-				2B2CFC8C2283ACC5004C6ECA /* MatchStartModalDelegate.swift in Sources */,
+				2B22BEB022A761F8007CD052 /* PalmaresService.swift in Sources */,
 				2B22BE9E22A511CA007CD052 /* UpdatedStatusModalViewController.swift in Sources */,
 				2B22BE81229D7D3B007CD052 /* MatchService.swift in Sources */,
 				2B2CFC6922823914004C6ECA /* MatchListDelegate.swift in Sources */,

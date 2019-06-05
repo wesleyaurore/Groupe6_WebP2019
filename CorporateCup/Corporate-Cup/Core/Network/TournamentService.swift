@@ -10,18 +10,29 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-typealias CallbackTournamnent = (_ res: JSON, _ error: Error?) -> Void
-typealias CallbackTournamentSummary = (_ res: Any, _ error: Bool) -> Void
+typealias CallbackTournament = (_ res: Any, _ error: Bool) -> Void
+typealias CallbackTournamentChangedStatus = (_ res: JSON, _ error: Error?) -> Void
 
 class TournamentService {
-    static func pendingTournamentAction(callBack: @escaping CallbackTournamnent) {
+    static func pendingTournamentAction(callBack: @escaping CallbackTournament) {
         Alamofire.request(UrlBuilder.checkPendingTournamentUrl(), method: .get, encoding: JSONEncoding.default, headers: AuthService.getHeadersAction()).responseJSON(completionHandler: { response in
 
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                callBack(json, nil)
 
+                let tournamentData = json["data"]["data"][0]
+                let groupsData = json["included"]["groups"]
+                let playersData = "user"
+
+                let tournament = setTournament(tournamentData: tournamentData, groupsData: groupsData, playersData: playersData)
+
+                let code = (json["code"].int ?? 200)
+                
+                let error = code != UrlBuilder.sucessCode ? true : false
+                
+                callBack(tournament, error)
+                
             case .failure(let error):
                 print(error)
                 break
@@ -29,20 +40,56 @@ class TournamentService {
         })
     }
     
-    static func tournamentSummaryAction(callBack: @escaping CallbackTournamentSummary) {
+    static func tournamentSummaryAction(callBack: @escaping CallbackTournament) {
         Alamofire.request(UrlBuilder.tournamentSummaryUrl(), method: .get, encoding: JSONEncoding.default, headers: AuthService.getHeadersAction()).responseJSON(completionHandler: { response in
             
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 
-                let matchList = setTournament(json: json)
+                let tournamentData = json["data"][0]
+                let groupsData = tournamentData["groups"]
+                let playersData = "users"
+        
+                let tournament = setTournament(tournamentData: tournamentData, groupsData: groupsData, playersData: playersData)
                 
                 let code = (json["code"].int ?? 200)
                 
                 let error = code != UrlBuilder.sucessCode ? true : false
                 
-                callBack(matchList, error)
+                callBack(tournament, error)
+                
+            case .failure(let error):
+                print(error)
+                break
+            }
+        })
+    }
+    
+    static func joinTournamentAction(id: Int, callBack: @escaping CallbackTournamentChangedStatus) {
+        Alamofire.request(UrlBuilder.joinTournamentUrl(id: String(id)), method: .get, encoding: JSONEncoding.default, headers: AuthService.getHeadersAction()).responseJSON(completionHandler: { response in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+
+                callBack(json, nil)
+                
+            case .failure(let error):
+                print(error)
+                break
+            }
+        })
+    }
+    
+    static func leaveTournamentAction(id: Int, callBack: @escaping CallbackTournamentChangedStatus) {
+        Alamofire.request(UrlBuilder.leaveTournamentUrl(id: String(id)), method: .get, encoding: JSONEncoding.default, headers: AuthService.getHeadersAction()).responseJSON(completionHandler: { response in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                callBack(json, nil)
                 
             case .failure(let error):
                 print(error)
@@ -52,14 +99,12 @@ class TournamentService {
     }
 }
 
-func setTournament(json: JSON) -> Tournament {
-    let tournamentData = json["data"][0]
-    
+func setTournament(tournamentData: JSON, groupsData: JSON, playersData: String) -> Tournament {
     let tournamentId = tournamentData["id"].int ?? 0
     let tournamentCompanyId = tournamentData["company_id"].int ?? 0
     let tournamentName = tournamentData["name"].string ?? ""
     let tournamentStatusData = tournamentData["status"].string ?? ""
-    
+
     var tournamentStatus: TournamentStatus = .Pending
     
     switch tournamentStatusData {
@@ -76,15 +121,14 @@ func setTournament(json: JSON) -> Tournament {
     
     var groups: [Group] = [Group]()
     
-    let groupsData = tournamentData["groups"].array ?? []
-    
-    for groupData in groupsData {
+    for groupData in groupsData.array ?? [] {
         let groupId = groupData["id"].int ?? 0
         let groupTournamentId = groupData["tournament_id"].int ?? 0
         let groupName = groupData["name"].string ?? ""
         
         var players: [Player] = [Player]()
-        let playersData = groupData["users"].array ?? []
+        
+        let playersData = groupData[playersData].array ?? []
         
         for playerData in playersData {
             let playerId = playerData["id"].int ?? 0
@@ -92,7 +136,7 @@ func setTournament(json: JSON) -> Tournament {
             let playerEmail = playerData["email"].string ?? ""
             let playerAvatar = UIImageView()
             let avatarUrl = formatUrl(url: playerData["avatar_url"].string ?? "")
-            if avatarUrl == "" {
+            if avatarUrl != "" {
                 playerAvatar.downloaded(from: avatarUrl)
             } else {
                 playerAvatar.image = UIImage(named: "default_avatar")
@@ -113,64 +157,4 @@ func setTournament(json: JSON) -> Tournament {
     return Tournament(id: tournamentId, companyId: tournamentCompanyId, name: tournamentName, status: tournamentStatus, launch: tournamentLaunch, price: tournamentPrice, groups: groups)
 }
 
-//func setTournament(json: JSON) -> Tournament {
-//    let tournamentId = json["gameInfo"]["tournament"][0]["id"].int ?? 0
-//    let tournamentCompanyId = json["gameInfo"]["tournament"][0]["company_id"].int ?? 0
-//    let tournamentName = json["gameInfo"]["tournament"][0]["name"].string ?? ""
-//    let tournamentStatusData = json["gameInfo"]["tournament"][0]["status"].string ?? ""
-//
-//    print(tournamentStatusData)
-//
-//    var tournamentStatus: TournamentStatus = .Pending
-//
-//    switch tournamentStatusData {
-//    case "RUNNING":
-//        tournamentStatus = .Running
-//    case "FINISHED":
-//        tournamentStatus = .Finished
-//    default:
-//        break
-//    }
-//
-//    let tournamentLaunch: String = json["gameInfo"]["tournament"][0]["launch_at"].string ?? ""
-//    let tournamentPrice = json["gameInfo"]["tournament"][0]["price"].string ?? ""
-//
-//    var groups: [Group] = [Group]()
-//    var players = [Player]()
-//
-//    let groupsData = json["data"][0]["groups"].array ?? []
-//
-//    for groupData in groupsData {
-//        let groupId = groupData["id"].int ?? 0
-//        let groupTournamentId = groupData["tournament_id"].int ?? 0
-//        let groupName = groupData["name"].string ?? ""
-//
-//        if groups.map({ $0.name }).firstIndex(of: groupName) == nil {
-//            let group = Group(id: groupId, tournamentId: groupTournamentId, name: groupName)
-//            groups += [group]
-//
-//            let playersData = groupData["users"].array ?? []
-//
-//            for playerData in playersData {
-//                let playerId = playerData["id"].int ?? 0
-//                let playerName = playerData["name"].string ?? ""
-//                let playerEmail = playerData["email"].string ?? ""
-//                let playerAvatar = UIImageView()
-//                let avatarUrl = formatUrl(url: playerData["avatar_url"].string ?? "")
-//                if avatarUrl == "" {
-//                    playerAvatar.downloaded(from: avatarUrl)
-//                } else {
-//                    playerAvatar.image = UIImage(named: "default_avatar")
-//                }
-//
-//                let playerScore = playerData["score"].int ?? 0
-//                let playerWinningTournament = playerData["winning_tournament"].int ?? 0
-//
-//                let player = Player(id: playerId, name: playerName, email: playerEmail, avatar: playerAvatar, score: playerScore, winningTournament: playerWinningTournament)
-//
-//                players += [player]
-//            }
-//        }
-//    }
-//
-//    return Tournament(id: tournamentId, companyId: tournamentCompanyId, name: tournamentName, status: tournamentStatus, launch: tournamentLaunch, price: tournamentPrice, groups: groups)
+

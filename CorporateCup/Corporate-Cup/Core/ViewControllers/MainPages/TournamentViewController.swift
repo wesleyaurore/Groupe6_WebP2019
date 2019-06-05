@@ -8,8 +8,8 @@
 
 import UIKit
 
-class TournamentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class TournamentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TournamentDelegate {
+    // Properties
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tournamentName: UILabel!
     @IBOutlet weak var tournamentTableView: UITableView!
@@ -19,9 +19,22 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
     var loader: UIActivityIndicatorView = UIActivityIndicatorView()
     
     var tournament: Tournament? = nil
+    
+    @objc func rightButtonAction() {
+        
+    }
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let customView:UIView = UIView()
+        customView.backgroundColor = .green
+        customView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        let item = UIBarButtonItem(customView: customView)
+        self.navigationController?.navigationItem.rightBarButtonItem?.title = "profil"
+        
+        self.navigationController?.navigationBar.topItem?.title = "Tournois"
         
         self.view.backgroundColor = UIColor.FlatColor.lightGrey
         self.mainView.backgroundColor = UIColor.FlatColor.lightGrey
@@ -32,11 +45,34 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
         
         self.tournamentTableView.dataSource = self
         self.tournamentTableView.delegate = self
+        
+        self.mainView.isHidden = true
 
         self.view.addSubview(statusView)
         loader = basicLoader
         
         loadingTournament()
+        
+        TournamentService.pendingTournamentAction(){ (res, error) in
+            if error {
+                self.loader.stopAnimating()
+                self.statusView.isHidden = false
+                self.statusView.status(image: "presentation", info: "Oops !! Il semble qu'il y est eu un problème")
+            } else {
+                self.tournament = (res as! Tournament)
+                self.loader.stopAnimating()
+                
+                if self.tournament?.status == .Pending {
+                    self.statusView.status(image: "presentation", info: "Le tournoi commence bientôt !", button: self.statusButton, buttonTitle: "Voir les Infos")
+                    self.statusView.isHidden = false
+
+                    self.statusButton.addTarget(self, action:#selector(self.statusActionHandler), for: .touchUpInside)
+                } else {
+                    self.statusView.isHidden = false
+                    self.statusView.status(image: "presentation", info: "Aucun tournoi n'est prévu pour le moment")
+                }
+            }
+        }
         
         TournamentService.tournamentSummaryAction(){ (res, error) in
             if error {
@@ -51,14 +87,6 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
             }
         }
-        
-//        TournamentService.pendingTournamentAction(){ (res, error) in
-//            if res["message"].string == "there is no incoming tournament" {
-//                self.noDisplayedTournament()
-//            } else {
-//
-//            }
-//        }
     }
     
     // Table view data source
@@ -121,6 +149,43 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    // Actions
+    @objc func statusActionHandler() {
+        showIssueModal()
+    }
+    
+    func tournamentAction(action: TournamentAction) {
+        switch action {
+        case .Join:
+            TournamentService.joinTournamentAction(id: self.tournament!.id){ (res, error) in
+                if res["message"] == "" {
+                    self.showUpdatedStatusModal(parent: self.presentedViewController!, image: "team_work", info: "Félicitation !", message: "Vous allez participer au prochain tournoi ! Mais noubliez pas un match ne se gagne pas sur le terrain, mais lors de l'entrainement...", buttonTitle: "C'est noté !")
+                } else {
+                    self.showUpdatedStatusModal(parent: self.presentedViewController!, image: "presentation", info: "Oops !! Il semble qu'il y est eu un problème", buttonTitle: "Ok")
+                }
+            }
+        case .Leave:
+            TournamentService.leaveTournamentAction(id: self.tournament!.id){ (res, error) in
+                print(res)
+            }
+        }
+    }
+    
+    // Modals
+    func showIssueModal() {
+        let modal = TournamentActionModalViewController()
+        modal.tournament = self.tournament!
+        modal.delegate = self
+        modal.showModal(parent: self)
+    }
+    
+    func showUpdatedStatusModal(parent: UIViewController, image: String, info: String, message: String? = "", buttonTitle: String) {
+        let modal = UpdatedStatusModalViewController()
+        modal.initModal(parent: parent, image: image, info: info, message: message!, buttonTitle: buttonTitle)
+        modal.showModal(parent: parent)
+    }
+    
+    // Data
     func loadingTournament() {
         self.loader.startAnimating()
         self.mainView.isHidden = true
@@ -138,7 +203,6 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
         self.loader.stopAnimating()
         self.tournamentTableView.reloadData()
         self.mainView.isHidden = false
+        self.statusView.isHidden = true
     }
-
-    
 }

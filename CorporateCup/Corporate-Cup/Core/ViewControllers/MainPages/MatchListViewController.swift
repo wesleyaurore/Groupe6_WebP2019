@@ -30,6 +30,8 @@ class MatchListViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.topItem?.title = "Mes matchs"
+        
         self.view.backgroundColor = UIColor.FlatColor.lightGrey
         
         self.matchTableView.allowsSelection = false

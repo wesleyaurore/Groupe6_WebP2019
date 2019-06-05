@@ -63,4 +63,16 @@ class UrlBuilder {
     static func tournamentSummaryUrl() -> String {
         return "\(baseUrl)/app/tournament/summary"
     }
+    
+    static func joinTournamentUrl(id: String) -> String {
+        return "\(baseUrl)/app/tournament/\(id)/addUser"
+    }
+    
+    static func leaveTournamentUrl(id: String) -> String {
+        return "\(baseUrl)/app/tournament/\(id)/removeUser"
+    }
+    
+    static func palmaresUrl() -> String {
+        return "\(baseUrl)/app/user/rank"
+    }
 }

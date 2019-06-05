@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 typealias CallbackGame = (_ res: Any, _ error: Bool) -> Void
-typealias CallbackGameStart = (_ res: JSON, _ error: Error?) -> Void
+typealias CallbackGameStatusChanged = (_ res: JSON, _ error: Error?) -> Void
 
 class MatchService {
     static func gamesPendingAction(callBack: @escaping CallbackGame) {
@@ -80,7 +80,7 @@ class MatchService {
         })
     }
     
-    static func gameStartAction(id: Int, callBack: @escaping CallbackGameStart) {
+    static func gameStartAction(id: Int, callBack: @escaping CallbackGameStatusChanged) {
         Alamofire.request(UrlBuilder.gameStartUrl(id: String(id)), method: .get, encoding: JSONEncoding.default, headers: AuthService.getHeadersAction()).responseJSON(completionHandler: { response in
             switch response.result {
             case .success(let value):
@@ -95,7 +95,7 @@ class MatchService {
         })
     }
 
-    static func gameEndAction(id: Int, body: [String : Any], callBack: @escaping CallbackGameStart) {
+    static func gameEndAction(id: Int, body: [String : Any], callBack: @escaping CallbackGameStatusChanged) {
         Alamofire.request(UrlBuilder.gameEndUrl(id: String(id)), method: .put, parameters: body, encoding: JSONEncoding.default, headers: AuthService.getHeadersAction()).responseJSON(completionHandler: { response in
             switch response.result {
             case .success(let value):
@@ -143,7 +143,7 @@ class MatchService {
         })
     }
     
-    static func addBadgeAction(id: Int, badge: Int, callBack: @escaping CallbackGameStart) {
+    static func addBadgeAction(id: Int, badge: Int, callBack: @escaping CallbackGameStatusChanged) {
         Alamofire.request(UrlBuilder.addBadgeUrl(id: String(id), badge: String(badge)), method: .get, encoding: JSONEncoding.default, headers: AuthService.getHeadersAction()).responseString(completionHandler: { response in
             switch response.result {
             case .success(let value):
